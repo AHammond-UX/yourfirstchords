@@ -1,0 +1,275 @@
+:root {
+  /* =========================
+     COLOR SYSTEM (role-based)
+     ========================= */
+
+/* Backgrounds */
+  /* Backgrounds */
+  --bg-page: #E6D8B8;
+  --bg-section: #F5F1E6;
+  --bg-section-alt: #DED1AE;
+  --bg-header: #1F3D2B;
+  --bg-accent: #2F6B4F;
+
+  /* Accents */
+  --bg-accent-secondary: #4E6B4C;
+
+  /* Text */
+  --text-primary: #2B2A26;
+  --text-secondary: #5E5A50;
+  --text-inverse: #F5F1E6;
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  --font-heading: 'Special Elite', cursive;
+  --font-body: 'Merriweather', serif;
+  --font-ui: 'Montserrat', sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* =========================
+     SPACING SCALE
+     ========================= */
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* =========================
+     LAYOUT WIDTHS
+     ========================= */
+
+  --max-width-content: 1100px;
+  --max-width-narrow: 720px;
+
+  /* =========================
+     BORDERS & SHAPE
+     ========================= */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* =========================
+     SHADOWS (subtle, rustic)
+     ========================= */
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12);
+
+  /* =========================
+     TRANSITIONS
+     ========================= */
+
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+
+  /* =========================
+     LAYERS (z-index)
+     ========================= */
+
+  --layer-header: 100;
+  --layer-overlay: 200;
+  --layer-modal: 300;
+}
+
+/* =========================
+   BASE ELEMENT STYLES
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Headings default */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin-top: 0;
+}
+
+/* =========================
+   PAGE LAYOUT
+   ========================= */
+
+.page {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header {
+  background-color: var(--bg-header);
+  color: var(--text-inverse);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
+.main {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section {
+  background-color: var(--bg-section);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.section--alt {
+  background-color: var(--bg-section-alt);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+.body-text {
+  margin-bottom: var(--space-md);
+}
+
+/* =========================
+   LESSON LIST
+   ========================= */
+
+.lesson-list {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.lesson-list li {
+  margin-bottom: var(--space-sm);
+}
+
+/* =========================
+   CARDS (LESSON LINKS)
+   ========================= */
+
+   .card {
+  background-color: var(--bg-section);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-sm);
+}
+
+/* =========================
+   IMAGES
+   ========================= */
+
+.lesson-image {
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+
+  object-fit: contain;
+  display: block;
+
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+}
+
+/* =========================
+   BUTTONS & LINKS
+   ========================= */
+
+.button {
+  display: inline-block;
+  font-family: var(--font-ui);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+.button--primary {
+  background-color: var(--bg-accent);
+  color: var(--text-inverse);
+}
+
+.button--primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  text-align: center;
+  padding: var(--space-lg);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* =========================================================
+   LESSON IMAGE SYSTEM
+   --------------------------------------------------------- */
+
+.lesson-figure {
+  margin: var(--space-lg) auto;
+  max-width: 320px;
+  text-align: center; /* centers caption text */
+}
+
+.lesson-image {
+  display: block;              /* removes inline spacing issues */
+  margin-left: auto;           /* centers image horizontally */
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-section);
+}
+
+
+.lesson-caption {
+  margin-top: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 800;
+  text-align: center
+  ;
+}
